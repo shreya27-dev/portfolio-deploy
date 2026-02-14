@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("/images/Homepage.svg") no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: #ffffff !important;
+  z-index: -1;
+  
+}
+
+body {
+  background: url("/images/Homepage.svg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+
+}
+
+
+.font-jaro {
+  font-family: 'Jaro', sans-serif;
+}
+.font-jaldi {
+  font-family: 'Jaldi', sans-serif;
+}
+
+
+@keyframes colorShift {
+  0% { background-color: #dc4444; }
+  25% { background-color: #e3b930; }
+  50% { background-color: #305ae3; }
+  75% { background-color: #7b30e3; }
+  100% { background-color: #e33096; }
+}
+
+.animate-colorShift {
+  animation: colorShift 2s infinite alternate;
+}
+
+nav {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+@keyframes float-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translatey(12px);
+  }
+}
+
+@keyframes float-horizontal-reverse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translatey(-12px);
+  }
+}
+
+.float-horizontal {
+  animation: float-horizontal 8s ease-in-out infinite;
+}
+
+.float-horizontal-reverse {
+  animation: float-horizontal-reverse 5s ease-in-out infinite;
+}
+
+.float-delay-1 { animation-delay: 0.2s; }
+.float-delay-2 { animation-delay: 0.4s; }
+.float-delay-3 { animation-delay: 0.6s; }
+.float-delay-4 { animation-delay: 0.8s; }
+.float-delay-5 { animation-delay: 1s; }
+
+
+.card-stack {
+  perspective: 1000px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+              filter 0.5s ease, 
+              opacity 0.5s ease;
+  transform-origin: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 16px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Card states */
+.card-active {
+  transform: translateX(0) rotate(0deg);
+  filter: none;
+  opacity: 1;
+}
+
+.card-behind {
+  filter: blur(4px);
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+.card-further-behind {
+  filter: blur(8px);
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.card-hidden {
+  opacity: 0;
+}
+
+.swipe-right {
+  transform: translateX(120%) rotate(5deg);
+  opacity: 0;
+}
+
+.swipe-left {
+  transform: translateX(-120%) rotate(-5deg);
+  opacity: 0;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
