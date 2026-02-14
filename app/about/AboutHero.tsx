@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { TargetAndTransition } from "framer-motion";
 
 export default function AboutHero() {
   // Config for a smooth, weightless float
-  const smoothFloat = (delay: number = 0) => ({
+  const smoothFloat = (delay: number = 0): TargetAndTransition => ({
     y: ["-2%", "2%"], // Using percentages for smoother scaling
     transition: {
       duration: 4,
