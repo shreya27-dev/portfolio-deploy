@@ -2,7 +2,7 @@
 import Hero from "./components/HeroSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ProfessionalJourney from "./components/ProfessionalJourney";
-import SkillsSection from "./components/SkillItem";
+import SkillSection from "./components/SkillSection";
 
 
 
@@ -18,7 +18,7 @@ export default function Home() {
     
       <Hero/>
       <ProjectsSection />
-      <SkillsSection />
+      <SkillSection />
       <ProfessionalJourney/>
     </div>
   );
